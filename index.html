@@ -15,33 +15,38 @@
     <!-- ICONS -->
     <script src="https://kit.fontawesome.com/6f3103b13c.js" crossorigin="anonymous"></script>
     <!-- CSS  -->
-    <link rel="stylesheet" href="./style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<section>
     <div class="container">
         <h1>Tomato Gelato</h1>
-    </div>
 
     <div class="pannel">
         
-       <div id="work"></div>
-       <div id="break"></div>
+       <p id="work" class="active">work</p>
+       <p id="break">break</p>
 
     </div>
 
     <div class="clock">
-        <p id="hours">0:</p>
-        <p id="minutes">25:</p>
-        <p id="seconds">00:</p>
+        <div class="circle">
+            <div class="time">
+                <p id="minutes"></p>
+                <p>:</p>
+                <p id="seconds"></p>
+            </div>
+        </div>
     </div>
 
+    <div class="controls">
+        <button id="start" onclick="start()"><i class="fa-solid fa-play"></i></button>
 
-    <div class="controls"></div>
-    <button id="play" onClick="startPlaying()"><i class="fa-solid fa-play"></i></button>
-    <button id="pause" onClick="pausePlaying()"><i class="fa-solid fa-pause"></i></button>
-    <button id="square" onClick="stopPlaying()"><i class="fa-solid fa-square"></i></button>
+        <a id="reset" href="./"><i class="fa-solid fa-arrow-rotate-left"></i></a>
+    </div>
+</div>
+</section>
     <!-- SCRIPT -->
+
 </body>
 </html>
