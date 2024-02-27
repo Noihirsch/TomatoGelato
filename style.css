@@ -3,27 +3,141 @@
     --primary-color: #da4b27;
     --secondary-color: #f7b0d6;
     --font-family: 'Grandstander', cursive;
-  }
-  
-  * {
+    --timer-size: 600px;
+}
+
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
-  
-  html,
-  body {
+
+}
+
+html,
+body {
     height: 100%;
     width: 100%;
-  }
-  
-  body {
+}
+
+body {
     font-family: var(--font-family);
     background-color: var(--bg-color);
     color: var(--primary-color);
-  }
-  
-  h1 {
+    display: grid;
+    place-items: center;
+    grid-template-rows: 300px 700px;
+}
+
+h1 {
     font-size: 120px;
-  }
-  
+}
+
+main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    place-items: center;
+}
+
+main > div {
+    margin: 16px;
+}
+
+.pomodoro {
+    height: var(--timer-size);
+    width: var(--timer-size);
+    background-image: url("./images/pomodoro.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 80%;
+}
+
+.arm
+{
+    height: var(--timer-size);
+    width: var(--timer-size);
+    background-image: url("./images/arm.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 80%;
+    transition: transform 0.5s  ease-in;
+}
+
+.progress-ring
+{
+    position: absolute;
+    height: var(--timer-size);
+    width: var(--timer-size);
+}
+
+circle{
+    fill: transparent;
+    stroke-width: 6;
+}
+
+.progress-ring--shadow circle {
+    stroke: var(--secondary-color);
+}
+
+.progress-ring--timer circle {
+    stroke: var(--primary-color);
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    transition: stroke-dashoffset 0.5 ease-in;
+}
+
+.controls
+{
+    width: 290px;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+}
+
+.timers
+{
+    background-color: var(--secondary-color);
+    padding: 12px;
+    border-radius: 8px;
+
+}
+
+.timer--active 
+{
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.timer {
+
+    font-size:40px ;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 16px 0 10px 0;
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+button 
+{
+    font-family: var(--font-family);
+    font-size: 36px;
+    border: none;
+    border-radius: 8px;
+    padding: 16px 0px 0px 0px;
+    cursor:pointer;
+}
+
+.control-btn {
+    background-color: var(--primary-color);
+    background-image: url(./images/play.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.add-time-btn {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    grid-column: 1 / span 2;
+}
